@@ -35,7 +35,7 @@ namespace Queries.Migrations
             var authors = new List<Author>()
             {
                 new Author{ Id = 1, Name ="Patrick" },
-                new Author{ Id = 2, Name ="Tim" }
+                new Author{ Id = 2, Name ="Tim", Courses = new List<Course>() }
             };
 
             foreach (var author in authors)
@@ -43,7 +43,27 @@ namespace Queries.Migrations
 
             #endregion
 
+            #region Courses
 
+            var courses = new List<Course>()
+            {
+                new Course
+                {
+                    Id = 1,
+                    Title = "A books title1",
+                    Author = authors[0],
+                    DatePublished = DateTime.Today.AddYears(-5),
+                    Tags = new List<Tag>
+                    {
+                        tags["C#"]
+                    }
+                }
+            };
+
+            foreach (var course in courses)
+                context.Courses.AddOrUpdate(c => c.Id, course);
+
+            #endregion
         }
     }
 }
