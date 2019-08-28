@@ -10,6 +10,17 @@ namespace Queries
     {
         static void Main(string[] args)
         {
+            var context = new QueriesContext();
+
+            var query = from c in context.Courses
+                        where c.DatePublished < DateTime.Today
+                        orderby c.Title
+                        select c;
+
+            foreach (var result in query)
+                Console.WriteLine(result.Title);
+
+            Console.ReadLine();
         }
     }
 }
