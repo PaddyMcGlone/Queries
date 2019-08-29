@@ -20,6 +20,10 @@ namespace Queries
             foreach (var result in query)
                 Console.WriteLine(result.Title);
 
+            var projectionQuery = from c in context.Courses
+                                  where c.DatePublished < DateTime.Today
+                                  select new { NewName = c.Title, DateOfQuery = c.DatePublished };
+
             Console.ReadLine();
         }
     }
