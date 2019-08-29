@@ -24,6 +24,16 @@ namespace Queries
                                   where c.DatePublished < DateTime.Today
                                   select new { NewName = c.Title, DateOfQuery = c.DatePublished };
 
+
+            // An example of an inner join
+
+            // Below we use the navigational property to retrieve our data.
+            var InnerJoinQuery =
+                from c in context.Courses
+                select new { c.Author.Name };
+
+
+
             Console.ReadLine();
         }
     }
