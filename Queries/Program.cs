@@ -32,7 +32,13 @@ namespace Queries
                 from c in context.Courses
                 select new { c.Author.Name };
 
+            // Adding the group count method
+            var groupJoin =
+                from a in context.Authors
+                join c in context.Courses on a.Id equals c.AuthorId into g
+                select new { Name = a.Name, count = g.Count() };
 
+            // into 'g' then makes this join a group join
 
             Console.ReadLine();
         }
