@@ -61,6 +61,22 @@ namespace Queries
                     .Select(c => new { Name = c.Author.Name, Title = c.Title });
 
 
+            // Grouping
+            var courseGroup = context.Courses
+                .GroupBy(c => c.Level);
+
+            // GroupBy the course level
+
+            foreach (var group in courseGroup)
+            {
+                // Each group is produced a key
+                Console.WriteLine($"key - {group.Key}");
+
+                // Iterate over each item within the group
+                foreach (var item in group)
+                    Console.WriteLine($"course - {item.Title}");
+            }
+
             #endregion
 
             Console.ReadLine();
