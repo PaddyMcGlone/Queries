@@ -55,6 +55,12 @@ namespace Queries
                 .OrderBy(c => c.Title)
                 .ThenBy(c => c.Description);
 
+            // Projection
+            var courseProjection = context.Courses
+                    .Where(c => c.Id == 1)
+                    .Select(c => new { Name = c.Author.Name, Title = c.Title });
+
+
             #endregion
 
             Console.ReadLine();
