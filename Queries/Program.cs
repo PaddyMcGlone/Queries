@@ -77,6 +77,20 @@ namespace Queries
                     Console.WriteLine($"course - {item.Title}");
             }
 
+            // Joining
+
+            // Inner Join (Course & Authors)
+            //context.Courses.Join(context.Authors,
+            //    c => c.AuthorId, 
+            //    a => a.Id, 
+            //    (course, author) => new
+            //        {   CourseName = course.Title,
+            //            AuthorName = author.Name
+            //        }
+            //    );
+                
+
+
             #endregion
 
             Console.ReadLine();
