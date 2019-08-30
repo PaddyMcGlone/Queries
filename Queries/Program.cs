@@ -10,6 +10,8 @@ namespace Queries
     {
         static void Main(string[] args)
         {
+            #region Linq Syntax queries
+
             var context = new QueriesContext();
 
             var query = from c in context.Courses
@@ -39,6 +41,21 @@ namespace Queries
                 select new { Name = a.Name, count = g.Count() };
 
             // into 'g' then makes this join a group join
+
+            #endregion
+
+            #region Linq extension methods
+
+            // Restriction query
+            var course = context.Courses.Where(c => c.Id == 1);
+
+            // Ordering - note the use of 'thenby'
+            var courseOrdered = context.Courses
+                .Where(c => c.Id == 1)
+                .OrderBy(c => c.Title)
+                .ThenBy(c => c.Description);
+
+            #endregion
 
             Console.ReadLine();
         }
