@@ -104,6 +104,14 @@ namespace Queries
 
             #endregion
 
+            #region Eager Loading
+
+            var eagerLoading = context.Courses.Include("Author").ToList();
+
+            foreach (var lazyCourse in LazyResults)
+                Console.WriteLine($"Course name : {lazyCourse.Title} - Course Author :{lazyCourse.Author.Name}");
+            #endregion
+
             Console.ReadLine();
         }
     }
