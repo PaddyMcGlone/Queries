@@ -126,6 +126,19 @@ namespace Queries
 
             #endregion
 
+            #region Improved Searching Query
+
+            var searchAuthors = context.Authors.ToList();
+            var searchAuthorIds = searchAuthors.Select(a => a.Id);
+
+
+            // We are adding a list within the where clause
+            // Basically does this current course contain an id within this list.
+            var searchCourses = context.Courses.Where(c => searchAuthorIds.Contains(c.AuthorId));
+
+
+            #endregion
+
             Console.ReadLine();
         }
     }
