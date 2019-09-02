@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Queries
 {
@@ -110,6 +108,12 @@ namespace Queries
 
             foreach (var lazyCourse in LazyResults)
                 Console.WriteLine($"Course name : {lazyCourse.Title} - Course Author :{lazyCourse.Author.Name}");
+
+            // Adding Lambda definition instead (c => c)
+            var eagerLoadingWithLambda = context.Courses
+                                                .Include(c => c.Author)
+                                                .ToList();
+
             #endregion
 
             Console.ReadLine();
