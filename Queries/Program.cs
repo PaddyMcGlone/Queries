@@ -88,8 +88,19 @@ namespace Queries
             //            AuthorName = author.Name
             //        }
             //    );
-                
 
+
+
+            #endregion
+
+
+            #region Lazy Loading
+
+            var LazyResults = context.Courses;
+
+            // This is lazy loading and also an example of the N+1 problem within Lazy Loading in EF.
+            foreach (var lazyCourse in LazyResults)
+                Console.WriteLine($"Course name : {lazyCourse.Title} - Course Author :{lazyCourse.Author.Name}");
 
             #endregion
 
