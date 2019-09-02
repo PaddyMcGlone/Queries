@@ -12,3 +12,4 @@ C:\Users\paddy\Documents\GitHub\Queries\Queries\obj\Debug\Queries.exe
 C:\Users\paddy\Documents\GitHub\Queries\Queries\obj\Debug\Queries.pdb
 C:\Users\paddy\Documents\GitHub\Queries\Queries\obj\Debug\Queries.Migrations.AddingInitialMigration.resources
 C:\Users\paddy\Documents\GitHub\Queries\Queries\obj\Debug\Queries.csproj.GenerateResource.cache
+C:\Users\paddy\Documents\GitHub\Queries\Queries\obj\Debug\Queries.Migrations.UpdateCourseTableAddingLazyLoading.resources

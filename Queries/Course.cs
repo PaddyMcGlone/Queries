@@ -25,9 +25,9 @@ namespace Queries
         [ForeignKey(nameof(Author))] // Identify the name of annotation
         public int AuthorId { get; set; }
 
-        public Author Author { get; set; }
+        public virtual Author Author { get; set; }
 
-        public IList<Tag> Tags { get; set; }
+        public virtual IList<Tag> Tags { get; set; }
 
         public DateTime DatePublished { get; set; }
     }

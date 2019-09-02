@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201908281728572_AddingInitialMigration.Designer.cs">
       <DependentUpon>201908281728572_AddingInitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909020510056_UpdateCourseTableAddingLazyLoading.cs" />
+    <Compile Include="Migrations\201909020510056_UpdateCourseTableAddingLazyLoading.Designer.cs">
+      <DependentUpon>201909020510056_UpdateCourseTableAddingLazyLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +75,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908281728572_AddingInitialMigration.resx">
       <DependentUpon>201908281728572_AddingInitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909020510056_UpdateCourseTableAddingLazyLoading.resx">
+      <DependentUpon>201909020510056_UpdateCourseTableAddingLazyLoading.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
