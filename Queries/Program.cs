@@ -116,6 +116,16 @@ namespace Queries
 
             #endregion
 
+            #region Explicit loading
+
+            var ExplicitLoading = context.Authors.Single(a => a.Id == 1);
+
+            // The MSDN approach of Explicit loading (Entry, Collection, Load)
+            context.Entry(ExplicitLoading).Collection(a => a.Courses).Load();
+
+
+            #endregion
+
             Console.ReadLine();
         }
     }
